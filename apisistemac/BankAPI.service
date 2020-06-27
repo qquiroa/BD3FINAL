@@ -1,0 +1,13 @@
+[Unit]
+Description="BANK API to connect with local MySQL instance."
+
+[Service]
+User=root
+WorkingDirectory=/home/memo29sep/apipython
+VIRTUAL_ENV=/home/memo29sep/apipython/apipythonenv
+Enviroment=PATH=$VIRTUAL_ENV/bin:$PATH
+ExecStart=/home/memo29sep/apipython/apipythonenv/bin/python3 /home/memo29sep/apipython/restAPI.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
